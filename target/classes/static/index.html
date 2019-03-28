@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Weather</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+      href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="js/App.js"></script>
+    <script src="js/ApiClient.js"></script>
+</head>
+
+<body>
+  <h1>Weather By City</h1>
+  <div class="input-group mb-3">
+    <input id = "city" type="text" class="form-control" placeholder="city name" aria-label="city name" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button id="buscar" class="btn btn-outline-secondary" type="button" onclick="module.updateInfo()">Search</button>
+    </div>
+  </div>
+  <ul id="info">
+  </ul>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/home/2132219/Downloads/weather/src/main/java/edu/eci/arsw/weather/model/Weather.java
+/home/2132219/Downloads/weather/src/main/java/edu/eci/arsw/weather/services/WeatherServices.java
+/home/2132219/Downloads/weather/src/main/java/edu/eci/arsw/weather/persistence/impl/WeatherPersistenceImpl.java
+/home/2132219/Downloads/weather/src/main/java/edu/eci/arsw/weather/persistence/WeatherPersistence.java
+/home/2132219/Downloads/weather/src/main/java/edu/eci/arsw/weather/WeatherApplication.java
+/home/2132219/Downloads/weather/src/main/java/edu/eci/arsw/weather/controllers/WeatherController.java
