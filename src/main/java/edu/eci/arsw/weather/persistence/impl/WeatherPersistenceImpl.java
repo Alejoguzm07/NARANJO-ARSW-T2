@@ -17,6 +17,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  *
@@ -25,7 +26,7 @@ import java.util.Set;
 @Service
 public class WeatherPersistenceImpl implements WeatherPersistence {
 
-    private HashMap<String,Weather> cache = new HashMap<String,Weather>();
+    private ConcurrentHashMap<String,Weather> cache = new ConcurrentHashMap<String,Weather>();
     private static final String USER_AGENT = "Mozilla/5.0";
     private static String GET_URL = "http://api.openweathermap.org/data/2.5/weather?q=";
     private static String API_KEY = "&appid=c0198296887f1c0d81fd578f2c7e3761";
@@ -73,8 +74,22 @@ public class WeatherPersistenceImpl implements WeatherPersistence {
             while(response.charAt(posf)!='}'){
                 posf++;
             }
-            System.err.println(response.substring(posi+1,posf));
             clima.setLat(Float.parseFloat(response.substring(posi+1,posf)));
+            posi = posf + 31;
+            posf = posi+1;
+            while(response.charAt(posf)!='"'){
+                posf++;
+            }
+            clima.setWeather(response.substring(posi,posf));
+            posi = posf + 1;
+            while(response.charAt(posi)!=':'){
+                posi++;
+            }
+            posf = posi+2;
+            while(response.charAt(posf)!='"'){
+                posf++;
+            }
+            clima.setDescription(response.substring(posi+1,posf));
         } else {
             throw new Exception();
         }
