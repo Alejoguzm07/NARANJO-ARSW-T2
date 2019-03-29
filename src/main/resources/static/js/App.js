@@ -5,9 +5,9 @@ var module = (function () {
         $("#info").append('<li> weather: '+weather.weather+'</li>');
         $("#info").append('<li> description: '+weather.description+'</li>');
         $("#info").append('<li> temperature: '+weather.temperature+'</li>');
-        $("#info").append('<li> pressure: '+weather.pressure+'</li>');
+        /*$("#info").append('<li> pressure: '+weather.pressure+'</li>');
         $("#info").append('<li> humidity: '+weather.humidity+'</li>');
-        $("#info").append('<li> city: '+weather.city+'</li>');
+        $("#info").append('<li> city: '+weather.city+'</li>');*/
     };
     return {
       updateInfo:function (){
