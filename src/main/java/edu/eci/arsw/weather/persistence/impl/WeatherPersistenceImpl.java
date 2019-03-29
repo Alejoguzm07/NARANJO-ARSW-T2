@@ -89,7 +89,17 @@ public class WeatherPersistenceImpl implements WeatherPersistence {
             while(response.charAt(posf)!='"'){
                 posf++;
             }
-            clima.setDescription(response.substring(posi+1,posf));
+            clima.setDescription(response.substring(posi+2,posf));
+            posi = posf + 1;
+            while(response.charAt(posi)!='{'){
+                posi++;
+            }
+            posi+=7;
+            posf = posi+1;
+            while(response.charAt(posf)!=','){
+                posf++;
+            }
+            clima.setTemperature(Float.parseFloat(response.substring(posi+1,posf)));
         } else {
             throw new Exception();
         }
